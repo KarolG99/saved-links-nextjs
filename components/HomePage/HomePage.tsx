@@ -8,13 +8,13 @@ import headerImg from "../../public/headerImg.png";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function HomePage() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (session?.user) {
+    if (status === "authenticated") {
       setIsLoading(true);
       fetch("/api/signin", {
         method: "POST",
@@ -33,7 +33,7 @@ export default function HomePage() {
           setError("Something went wrong");
         });
     }
-  }, [router, session?.user]);
+  }, [router, session?.user, status]);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-around p-1">

@@ -6,17 +6,17 @@ import { useRouter } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 
 export default function UserHeader() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   useEffect(() => {
-    if (!session?.user) {
+    if (status === "unauthenticated") {
       router.push("/");
     }
-  }, [router, session?.user]);
+  }, [router, session, status]);
 
   return (
-    <div className="flex justify-between items-center p-2 shadow-sm">
+    <div className="flex justify-between items-center p-2 shadow-sm rounded-b-[12px]">
       <div className="flex justify-start items-center">
         {session?.user?.image && (
           <Image
