@@ -11,7 +11,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const user = await usersCollection.findOne({ email });
 
     if (user) {
-      res.status(200).json(user);
+      res.status(200).json(user._id);
     } else {
       const userBody = {
         name: req.body.name,
@@ -20,10 +20,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         links: [],
       };
       const { insertedId } = await usersCollection.insertOne(userBody);
-      const newUser = await usersCollection.findOne({ insertedId });
-      if (newUser) {
-        res.status(200).json(newUser);
-      }
+      if (insertedId) res.status(200).json(insertedId);
     }
   }
 };
