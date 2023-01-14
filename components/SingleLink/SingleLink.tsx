@@ -8,7 +8,10 @@ export default function SingleLink({ link }: any) {
   return (
     <div className="bg-white min-w-full px-4 py-3 rounded-[12px] shadow-sm my-5">
       <h2 className=" font-bold text-lg">{link.title}</h2>
-      <span className="text-[#F3B61F] text-xs font-semibold">#{link.tag}</span>
+      {link.tag.length > 0 && (
+        <span className="text-tagText text-xs font-semibold">#{link.tag}</span>
+      )}
+
       <p className="mb-2 text-[0.9rem]">{link.description}</p>
 
       <div className=" flex w-full justify-end">

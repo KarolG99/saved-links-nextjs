@@ -11,6 +11,8 @@ module.exports = {
         bgColor: "#faf8ff",
         primaryBlue: "#0066ff",
         darkText: "#001085",
+        tagBg: "#f9cd1126",
+        tagText: "#F3B61F"
       },
     },
   },
