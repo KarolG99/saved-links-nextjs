@@ -41,8 +41,8 @@ export default function HomePage() {
         <h1 className="font-black text-primaryBlue text-4xl mb-2">
           Saved Links
         </h1>
+        <h4>Save your links for another day.</h4>
         <h4>All useful links in one place.</h4>
-        <p>Save the links for later and keep them all in one place.</p>
         {isLoading && !error && (
           <Player
             src="https://assets9.lottiefiles.com/packages/lf20_usmfx6bp.json"
