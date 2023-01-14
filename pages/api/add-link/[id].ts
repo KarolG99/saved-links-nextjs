@@ -19,12 +19,27 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         description: req.body.description,
         link: req.body.link,
       };
-      await usersCollection.updateOne(
-        { _id: new ObjectId(userID?.toString()) },
-        {
-          $push: { links: newLink },
-        }
-      );
+      if (!user.tags.includes(req.body.tag) && req.body.tag.length > 0) {
+        await usersCollection.updateOne(
+          { _id: new ObjectId(userID?.toString()) },
+          {
+            $push: {
+              links: newLink,
+              tags: req.body.tag,
+            },
+          }
+        );
+      } else {
+        await usersCollection.updateOne(
+          { _id: new ObjectId(userID?.toString()) },
+          {
+            $push: {
+              links: newLink,
+            },
+          }
+        );
+      }
+
       res.status(200).send({ Message: "Success" });
     } else {
       res.status(400).send({ Message: "User not found" });

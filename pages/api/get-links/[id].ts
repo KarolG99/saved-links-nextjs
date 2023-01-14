@@ -13,7 +13,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     );
 
     if (user) {
-      res.status(200).json(user.links);
+      res.status(200).json({
+        links: user.links,
+        tags: user.tags,
+      });
     } else {
       res.status(400).send({ Message: "User not found" });
     }

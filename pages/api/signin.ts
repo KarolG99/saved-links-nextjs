@@ -18,6 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         image: req.body.image,
         email: req.body.email,
         links: [],
+        tags: [],
       };
       const { insertedId } = await usersCollection.insertOne(userBody);
       if (insertedId) res.status(200).json(insertedId);
