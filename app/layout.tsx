@@ -1,3 +1,4 @@
+import Providers from "@/Providers/Providers";
 import { Baloo_2 } from "@next/font/google";
 
 import "./globals.css";
@@ -13,7 +14,9 @@ export default function RootLayout({
     <html lang="en" className={baloo2.className}>
       <head />
       <body className="bg-bgColor text-darkText">
-        <main className="max-w-[900px] mx-auto">{children}</main>
+        <Providers>
+          <main className="max-w-[900px] mx-auto">{children}</main>
+        </Providers>
       </body>
     </html>
   );
