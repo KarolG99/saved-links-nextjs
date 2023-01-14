@@ -12,7 +12,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={baloo2.className}>
       <head />
-      <body>{children}</body>
+      <body className="bg-bgColor text-darkText">
+        <main className="max-w-[900px] mx-auto">{children}</main>
+      </body>
     </html>
   );
 }
