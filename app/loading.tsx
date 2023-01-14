@@ -7,6 +7,7 @@ export default function loading() {
       src="https://assets9.lottiefiles.com/packages/lf20_usmfx6bp.json"
       loop
       autoplay
+      className="w-60 h-60"
     />
   );
 }

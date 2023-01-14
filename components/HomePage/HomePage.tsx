@@ -61,7 +61,12 @@ export default function HomePage() {
         )}
         {!isLoading && error && <p className="mt-5 font-bold">{error}</p>}
       </div>
-      <Image src={headerImg} alt="" className=" w-full max-w-[500px]" />
+      <Image
+        src={headerImg}
+        alt=""
+        priority
+        className=" w-full max-w-[500px]"
+      />
     </div>
   );
 }
