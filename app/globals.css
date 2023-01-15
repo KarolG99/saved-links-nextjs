@@ -7,5 +7,5 @@
 }
 
 .error {
-  @apply text-red-500
+  @apply text-red-500 bg-red-100 px-2 w-fit rounded-md;
 }

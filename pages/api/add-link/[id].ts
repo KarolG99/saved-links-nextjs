@@ -12,20 +12,22 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       new ObjectId(userID?.toString())
     );
 
+    const formattedTag = req.body.tag.replaceAll(" ", "").toLocaleLowerCase();
+
     if (user) {
       const newLink = {
         title: req.body.title,
-        tag: req.body.tag,
+        tag: formattedTag,
         description: req.body.description,
         link: req.body.link,
       };
-      if (!user.tags.includes(req.body.tag) && req.body.tag.length > 0) {
+      if (!user.tags.includes(formattedTag) && formattedTag.length > 0) {
         await usersCollection.updateOne(
           { _id: new ObjectId(userID?.toString()) },
           {
             $push: {
               links: newLink,
-              tags: req.body.tag,
+              tags: formattedTag,
             },
           }
         );

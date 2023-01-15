@@ -1,6 +1,7 @@
 import AddLinkButton from "@/components/AddLinkButton/AddLinkButton";
 import SingleLink from "@/components/SingleLink/SingleLink";
 import getUserLinks from "@/lib/getUserLinks";
+import React from "react";
 
 export default async function page({ params }: any) {
   const { id } = params;
@@ -9,18 +10,15 @@ export default async function page({ params }: any) {
   return (
     <div className="max-w-[600px] mx-auto p-[10px]">
       {tags.length > 0 && (
-        <div className="flex">
+        <div className="flex flex-wrap">
           {tags.map((tag: string) => (
-            <>
+            <React.Fragment key={tag}>
               {tag.length > 0 && (
-                <button
-                  className="bg-tagBg text-tagText font-medium px-[10px] py-[1px] m-2 rounded-[7px]"
-                  key={tag}
-                >
+                <button className="bg-tagBg text-tagText font-medium px-[10px] py-[1px] m-2 rounded-[7px]">
                   #{tag}
                 </button>
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
       )}
