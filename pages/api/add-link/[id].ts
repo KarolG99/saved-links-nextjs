@@ -43,7 +43,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         );
       }
 
-      res.status(200).send({ Message: "Success" });
+      res.status(200).json(newLink);
     } else {
       res.status(400).send({ Message: "User not found" });
     }

@@ -39,15 +39,16 @@ export default function Page({ params }: any) {
     setIsAdding(true);
     setIsSuccess(false);
     setErrorMsg("");
-    addUserLink(id, data)
-      .then((res) => {
+    addUserLink(id, data).then((res) => {
+      if (res?.id.length > 0) {
+        console.log(res.id);
         setIsAdding(false);
         setIsSuccess(true);
-      })
-      .catch((err) => {
+      } else {
         setIsAdding(false);
         setErrorMsg("Someting went wrong");
-      });
+      }
+    });
     reset();
   };
 
