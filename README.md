@@ -1,3 +1,44 @@
+<h1 align="center"> Saved Links </h1>
+<p align="center"><a href="saved-links-nextjs.vercel.app"> DEMO </a></p>
+
+<br />
+
+## Project Overview 👀
+<b>Saved Links</b> is an application where you can save important links in one application and access in different devices. Currently You can log in with Google.
+
+## Project Objectives 🎯
+Storing important links in one place.
+
+## Main Features (currently) 🚀
+<ul>
+  <li>adding link with title, tag and description</li>
+  <li>storing information in MongoDB</li>
+  <li>
+    <del>editing link information</del>
+   </li>
+  <li>
+    <del>deleting link information</del>
+   </li>
+   <li>
+    <del>search by tags</del>
+   </li>
+   <li>
+    <del>search by title</del>
+   </li>
+</ul>
+
+## Main Technologies 🕹
+<ul>
+  <li>NextJS 13</li>
+  <li>TypeScript</li>
+  <li>Tailwind CSS</li>
+  <li>Next-Auth</li>
+  <li>Mongodb</li>
+  <li>React-Hook-Form</li>
+</ul>
+
+<br />
+<br />
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
