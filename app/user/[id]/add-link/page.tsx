@@ -45,7 +45,7 @@ export default function Page({ params }: any) {
     setErrorMsg("");
     addUserLink(id, data).then((res) => {
       setIsAdding(false);
-      if (res.error.length > 0) {
+      if (res.error) {
         setErrorMsg(res.error);
       } else {
         setIsSuccess(true);
