@@ -12,18 +12,14 @@ type Inputs = {
 };
 
 async function addUserLink(id: string, link: Inputs) {
-  try {
-    const response = await fetch(`/api/add-link/${id}`, {
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
-      },
-      body: JSON.stringify(link),
-    });
-    return await response.json();
-  } catch {
-    return { error: "Something went wrong" };
-  }
+  const response = await fetch(`/api/add-link/${id}`, {
+    method: "POST",
+    headers: {
+      "content-Type": "application/json",
+    },
+    body: JSON.stringify(link),
+  });
+  return await response.json();
 }
 
 export default function Page({ params }: any) {
@@ -43,14 +39,15 @@ export default function Page({ params }: any) {
     setIsAdding(true);
     setIsSuccess(false);
     setErrorMsg("");
-    addUserLink(id, data).then((res) => {
-      if (res.error) {
-        setErrorMsg(res.error);
-      } else {
+    addUserLink(id, data)
+      .then((res) => {
+        setIsAdding(false);
         setIsSuccess(true);
-      }
-      setIsAdding(false);
-    });
+      })
+      .catch((err) => {
+        setIsAdding(false);
+        setErrorMsg("Someting went wrong");
+      });
     reset();
   };
 

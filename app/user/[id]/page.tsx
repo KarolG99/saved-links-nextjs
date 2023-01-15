@@ -15,7 +15,7 @@ export default function Page({ params }: any) {
     getUserLinks(id)
       .then((res) => {
         setResponse({
-          links: res.links,
+          links: res.links.reverse(),
           tags: res.tags,
         });
         setIsLoading(false);

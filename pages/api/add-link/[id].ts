@@ -16,6 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (user) {
       const newLink = {
+        id: new ObjectId(),
         title: req.body.title,
         tag: formattedTag,
         description: req.body.description,
