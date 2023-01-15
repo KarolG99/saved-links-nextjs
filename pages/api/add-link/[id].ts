@@ -49,8 +49,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     client.close();
-
-    res.status(201).send({ Message: "Link added" });
   }
 };
 
