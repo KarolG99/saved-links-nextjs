@@ -1,7 +1,7 @@
 "use client";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-export default function loading() {
+export default function UserLoading() {
   return (
     <div className=" h-[90vh] flex justify-center items-center">
       <Player
