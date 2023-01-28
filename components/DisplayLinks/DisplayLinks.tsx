@@ -49,8 +49,9 @@ export default function DisplayLinks({
                 <SingleTag
                   tag={tag}
                   onClick={(e) => {
-                    setCurrentSearchingText(e.target.innerText.slice(1));
-                    handleSearch(e.target.innerText.slice(1), index);
+                    const target = e.target as HTMLElement;
+                    setCurrentSearchingText(target.innerText.slice(1));
+                    handleSearch(target.innerText.slice(1), index);
                     setActiveButtonIndex(index);
                   }}
                   isActive={activeButtonIndex === index && isSearchResults}
