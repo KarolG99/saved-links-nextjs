@@ -13,14 +13,11 @@ Storing important links in one place.
 <ul>
   <li>adding link with title, tag and description</li>
   <li>storing information in MongoDB</li>
-  <li>
-    <del>editing link information</del>
+   <li>
+    search by tags
    </li>
   <li>
     <del>deleting link information</del>
-   </li>
-   <li>
-    <del>search by tags</del>
    </li>
    <li>
     <del>search by title</del>
